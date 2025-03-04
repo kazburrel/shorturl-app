@@ -1,4 +1,4 @@
-<p align="center">URL Shortener API</p>
+<h1 align="center">URL Shortener API</h1>
 
 ## About
 
