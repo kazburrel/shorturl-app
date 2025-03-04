@@ -6,8 +6,8 @@ use App\Http\Requests\DecodeUrlRequest;
 use App\Http\Requests\encodeUrlRequest;
 use App\Http\Resources\dencodeUrlResource;
 use App\Http\Resources\encodeUrlResource;
-use App\Services\Url\decodeUrl;
-use App\Services\Url\encodeUrl;
+use App\Services\Url\DecodeUrl;
+use App\Services\Url\EncodeUrl;
 use InvalidArgumentException;
 
 /**
@@ -22,7 +22,7 @@ class UrlController extends Controller
      * @param encodeUrl $action The service class that handles the URL encoding
      * @return \Illuminate\Http\JsonResponse The encoded URL data with 201 status on success, or error with 422 status
      */
-    public function encode(encodeUrlRequest $request, encodeUrl $action)
+    public function encode(encodeUrlRequest $request, EncodeUrl $action)
     {
         try {
             $url = $request->validated();
@@ -42,7 +42,7 @@ class UrlController extends Controller
      * @param decodeUrl $action The service class that handles the URL decoding
      * @return \Illuminate\Http\JsonResponse The decoded URL data with 200 status on success, or error with 422 status
      */
-    public function decode(DecodeUrlRequest $request, decodeUrl $action)
+    public function decode(DecodeUrlRequest $request, DecodeUrl $action)
     {
         try {
             $url = $request->validated();

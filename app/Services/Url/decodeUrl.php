@@ -7,7 +7,7 @@ use App\Traits\UrlMapTrait;
 /**
  * Service class for decoding shortened URLs back to their original form
  */
-class decodeUrl
+class DecodeUrl
 {
     use UrlMapTrait;
 
