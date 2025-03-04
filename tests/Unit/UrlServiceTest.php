@@ -20,7 +20,7 @@ class UrlServiceTest extends TestCase
         // Arrange
         Cache::shouldReceive('put')->once()->andReturn(true);
 
-        $encoder = new encodeUrl();
+        $encoder = new EncodeUrl();
         $originalUrl = 'https://example.com';
 
         // Act
@@ -53,7 +53,7 @@ class UrlServiceTest extends TestCase
             ->with($shortCode)
             ->andReturn($urlData);
 
-        $decoder = new decodeUrl();
+        $decoder = new DecodeUrl();
 
         // Act
         $result = $decoder($shortUrl);
@@ -90,7 +90,7 @@ class UrlServiceTest extends TestCase
         // Arrange
         Cache::shouldReceive('put')->twice()->andReturn(true);
 
-        $encoder = new encodeUrl();
+        $encoder = new EncodeUrl();
         $originalUrl = 'https://example.com';
 
         // Act
@@ -106,7 +106,7 @@ class UrlServiceTest extends TestCase
         // Arrange
         Cache::shouldReceive('put')->twice()->andReturn(true);
 
-        $encoder = new encodeUrl();
+        $encoder = new EncodeUrl();
         $url1 = 'https://example.com';
         $url2 = 'https://example.org';
 
@@ -134,7 +134,7 @@ class UrlServiceTest extends TestCase
             ->with($shortCode)
             ->andReturn($urlData);
 
-        $decoder = new decodeUrl();
+        $decoder = new DecodeUrl();
 
         // Act
         $result = $decoder($shortUrl);
@@ -148,7 +148,7 @@ class UrlServiceTest extends TestCase
         // Arrange
         Cache::shouldReceive('put')->once()->andReturn(true);
 
-        $encoder = new encodeUrl();
+        $encoder = new EncodeUrl();
         $originalUrl = 'https://example.com?param=value&another=123';
 
         // Act

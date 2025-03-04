@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use App\Http\Requests\encodeUrlRequest;
+use App\Http\Requests\EncodeUrlRequest;
 use App\Http\Requests\DecodeUrlRequest;
 use Illuminate\Support\Facades\Validator;
 use Tests\TestCase;
@@ -12,7 +12,7 @@ class UrlValidationTest extends TestCase
     public function test_encode_url_request_validates_valid_url()
     {
         // Get the rules from the request class
-        $rules = (new encodeUrlRequest())->rules();
+        $rules = (new EncodeUrlRequest())->rules();
 
         // Create a validator with valid data
         $validator = Validator::make(['url' => 'https://example.com'], $rules);
@@ -24,7 +24,7 @@ class UrlValidationTest extends TestCase
     public function test_encode_url_request_rejects_invalid_url()
     {
         // Get the rules from the request class
-        $rules = (new encodeUrlRequest())->rules();
+        $rules = (new EncodeUrlRequest())->rules();
 
         // Create a validator with invalid data
         $validator = Validator::make(['url' => 'not-a-valid-url'], $rules);
@@ -36,7 +36,7 @@ class UrlValidationTest extends TestCase
     public function test_encode_url_request_requires_url()
     {
         // Get the rules from the request class
-        $rules = (new encodeUrlRequest())->rules();
+        $rules = (new EncodeUrlRequest())->rules();
 
         // Create a validator with missing data
         $validator = Validator::make([], $rules);
@@ -72,7 +72,7 @@ class UrlValidationTest extends TestCase
     public function test_encode_url_request_validates_url_max_length()
     {
         // Get the rules from the request class
-        $rules = (new encodeUrlRequest())->rules();
+        $rules = (new EncodeUrlRequest())->rules();
 
         // Create a very long URL
         $longUrl = 'https://example.com/' . str_repeat('a', 2000);
