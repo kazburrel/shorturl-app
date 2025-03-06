@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\DecodeUrlRequest;
 use App\Http\Requests\EncodeUrlRequest;
-use App\Http\Resources\DencodeUrlResource;
+use App\Http\Resources\DecodeUrlResource;
 use App\Http\Resources\EncodeUrlResource;
 use App\Services\Url\DecodeUrl;
 use App\Services\Url\EncodeUrl;
@@ -47,7 +47,7 @@ class UrlController extends Controller
         try {
             $url = $request->validated();
             $result = $action($url['url']);
-            return (new DencodeUrlResource($result))
+            return (new DecodeUrlResource($result))
                 ->response()
                 ->setStatusCode(200);
         } catch (InvalidArgumentException $e) {
