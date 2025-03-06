@@ -23,7 +23,7 @@ A simple, efficient URL shortening service built with Laravel. This RESTful API 
 1. Clone the repository:
    ```bash
    git clone https://github.com/kazburrel/shorturl-app.git
-   cd url-shortener
+   cd shorturl-app
    ```
 
 2. Install dependencies:
